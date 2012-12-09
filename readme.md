@@ -1221,31 +1221,34 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
 10. <a name="garbage">Garbage Collection</a>
 
-"Manually de-referencing objects is not necessary in most cases. By simply putting the variables where they need to be (ideally, as local as possible, i.e. inside the function where they are used 
-versus an outer scope), things should just work."
+    "Manually de-referencing objects is not necessary in most cases. By simply putting the variables where they need to be (ideally, as local as possible, i.e. inside the function where they are used 
+    versus an outer scope), things should just work."
 
-"There are also misconceptions about how null works. Setting an object reference to null doesn’t “null” the object. It sets the object reference to null. Using o.x = null is better than using delete, but it’s probably not even necessary."
+    "There are also misconceptions about how null works. Setting an object reference to null doesn’t “null” the object. It sets the object reference to null. Using o.x = null is better than using delete, but it’s probably not even necessary."
 
-"Globals are cleaned up when you refresh the page, navigate to a different page, close tabs or exit your browser. Function-scoped variables get cleaned up when a variable falls out of scope. When functions have exited and there aren’t any more references to it, the variable gets cleaned up."
+    "Globals are cleaned up when you refresh the page, navigate to a different page, close tabs or exit your browser. Function-scoped variables get cleaned up when a variable falls out of scope. When functions have exited and there aren’t any more references to it, the variable gets cleaned up."
 
-RULES OF THUMB
-To give the garbage collector a chance to collect as many objects as possible as early as possible, don’t hold on to objects you no longer need. This mostly happens automatically; here are a few things to keep in mind.
-*As mentioned earlier, a better alternative to manual de-referencing is to use variables with an appropriate scope. I.e. instead of a global variable that’s nulled out, just use a function-local variable that goes out of scope when it’s no longer needed. This means cleaner code with less to worry about.
-*Ensure that you’re unbinding event listeners where they are no longer required, especially when the DOM objects they’re bound to are about to be removed
-*If you’re using a data cache locally, make sure to clean that cache or use an aging mechanism to avoid large chunks of data being stored that you’re unlikely to reuse
+    RULES OF THUMB
+    To give the garbage collector a chance to collect as many objects as possible as early as possible, don’t hold on to objects you no longer need. This mostly happens automatically; here are a few things to keep in mind.
+    *As mentioned earlier, a better alternative to manual de-referencing is to use variables with an appropriate scope. I.e. instead of a global variable that’s nulled out, just use a function-local variable that goes out of scope when it’s no longer needed. This means cleaner code with less to worry about.
+    *Ensure that you’re unbinding event listeners where they are no longer required, especially when the DOM objects they’re bound to are about to be removed
+    *If you’re using a data cache locally, make sure to clean that cache or use an aging mechanism to avoid large chunks of data being stored that you’re unlikely to reuse
 
-http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/
+    http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/
 
 11. <a name="requirejs">RequireJs</a>
-#When to use require and when to use define?
 
-With define you register a module in require.js that you than can depend on in other module definitions or require statements. With require you "just" load/use a module or javascript file that can be loaded by require.js. For examples have a look at the documentation
+    When to use require and when to use define?
 
-My rule of thumb:
+        With define you register a module in require.js that you than can depend on in other module definitions or require statements. With require you "just" load/use a module or javascript file that can be loaded by require.js. For examples have a look at the documentation
 
-Define: If you want to declare a module you want to depend on in other parts of you application.
+        My rule of thumb:
 
-Require: If you just want to load and use stuff.
+        Define: If you want to declare a module you want to depend on in other parts of you application.
+
+        Require: If you just want to load and use stuff.
+
+        (http://stackoverflow.com/questions/9507606/when-to-use-require-and-when-to-use-define)
 
 
 ----------

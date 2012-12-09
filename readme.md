@@ -78,6 +78,7 @@ Projects _must_ include some form of unit, reference, implementation or function
  * [Comments](#comments)
  * [One Language Code](#language)
  * [Garbage Collection](#garbage)
+ * [RequireJS](#requirejs)
 
 
 
@@ -1223,12 +1224,6 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
 
     Programs should be written in one language, whatever that language may be, as dictated by the maintainer or maintainers.
 
-## Appendix
-
-### Comma First.
-
-Any project that cites this document as its base style guide will not accept comma first code formatting, unless explicitly specified otherwise by that project's author.
-
 11. <a name="garbage">Garbage Collection</a>
 
 "Manually de-referencing objects is not necessary in most cases. By simply putting the variables where they need to be (ideally, as local as possible, i.e. inside the function where they are used 
@@ -1245,6 +1240,17 @@ To give the garbage collector a chance to collect as many objects as possible as
 *If you’re using a data cache locally, make sure to clean that cache or use an aging mechanism to avoid large chunks of data being stored that you’re unlikely to reuse
 
 http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/
+
+12. <a name="requirejs">RequireJs</a>
+    
+
+## Appendix
+
+### Comma First.
+
+Any project that cites this document as its base style guide will not accept comma first code formatting, unless explicitly specified otherwise by that project's author.
+
+
 
 ----------
 

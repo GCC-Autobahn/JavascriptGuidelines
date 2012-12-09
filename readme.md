@@ -76,7 +76,6 @@ Projects _must_ include some form of unit, reference, implementation or function
  * [Misc](#misc)
  * [Native & Host Objects](#native)
  * [Comments](#comments)
- * [One Language Code](#language)
  * [Garbage Collection](#garbage)
  * [RequireJS](#requirejs)
 
@@ -1220,11 +1219,7 @@ The following sections outline a _reasonable_ style guide for modern JavaScript 
     #### JSDoc style is good, but requires a significant time investment
 
 
-10. <a name="language">One Language Code</a>
-
-    Programs should be written in one language, whatever that language may be, as dictated by the maintainer or maintainers.
-
-11. <a name="garbage">Garbage Collection</a>
+10. <a name="garbage">Garbage Collection</a>
 
 "Manually de-referencing objects is not necessary in most cases. By simply putting the variables where they need to be (ideally, as local as possible, i.e. inside the function where they are used 
 versus an outer scope), things should just work."
@@ -1241,15 +1236,16 @@ To give the garbage collector a chance to collect as many objects as possible as
 
 http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/
 
-12. <a name="requirejs">RequireJs</a>
-    
+11. <a name="requirejs">RequireJs</a>
+#When to use require and when to use define?
 
-## Appendix
+With define you register a module in require.js that you than can depend on in other module definitions or require statements. With require you "just" load/use a module or javascript file that can be loaded by require.js. For examples have a look at the documentation
 
-### Comma First.
+My rule of thumb:
 
-Any project that cites this document as its base style guide will not accept comma first code formatting, unless explicitly specified otherwise by that project's author.
+Define: If you want to declare a module you want to depend on in other parts of you application.
 
+Require: If you just want to load and use stuff.
 
 
 ----------
